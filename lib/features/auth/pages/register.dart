@@ -6,16 +6,18 @@ import '../widgets/auth_button_widget.dart';
 import '../widgets/auth_header_widget.dart';
 import '../widgets/custom_textfield.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
 
   @override
   void dispose() {
@@ -37,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const HeaderAuth(auth: 'Masuk'),
+              const HeaderAuth(auth: 'Daftar'),
               const Spacer(),
               Container(
                 height: 543.h,
@@ -63,15 +65,18 @@ class _LoginPageState extends State<LoginPage> {
                         hintText: 'Password',
                         isPassword: true,
                       ),
-                      SizedBox(height: 8.h),
-                      Text('Lupa password?',
-                          style: textTheme.bodyText2
-                              ?.copyWith(color: ColorValue.primaryColor)),
+                      SizedBox(height: 16.h),
+                      CustomTextField(
+                        controller: _confirmPasswordController,
+                        hintText: 'Konfirmasi Password',
+                        isPassword: true,
+                      ),
                       AuthButton(
-                        auth: 'Masuk',
+                        auth: 'Daftar',
                         usernameController: _usernameController,
                         passwordController: _passwordController,
-                        confirmPasswordController: _passwordController,
+                        confirmPasswordController: _confirmPasswordController,
+                        isRegister: true,
                       )
                     ],
                   ),

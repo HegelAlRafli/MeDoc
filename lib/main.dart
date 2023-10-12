@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:me_doc/features/auth/pages/intro.dart';
 
 import 'core/theme/app_theme_data.dart';
+import 'core/widgets/auth/authentication_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const IntroPage(),
+      child: const AuthenticationPage(),
     );
   }
 }
