@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/theme/color_value.dart';
 import 'login.dart';
+import 'register.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -70,17 +71,27 @@ class IntroPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                    height: 65.h,
-                    width: 148.w,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(50.r)),
-                    child: Center(
-                      child: Text(
-                        'Daftar',
-                        style: textTheme.headline1?.copyWith(
-                            fontSize: 16.sp, color: ColorValue.secondaryColor),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const RegisterPage(),
+                          ));
+                    },
+                    child: Container(
+                      height: 65.h,
+                      width: 148.w,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(50.r)),
+                      child: Center(
+                        child: Text(
+                          'Daftar',
+                          style: textTheme.headline1?.copyWith(
+                              fontSize: 16.sp,
+                              color: ColorValue.secondaryColor),
+                        ),
                       ),
                     ),
                   )
