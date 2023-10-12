@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../features/home/pages/home.dart';
 import '../../theme/color_value.dart';
 
 class BottomNavigation extends StatefulWidget {
@@ -15,9 +16,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   late final PageController _controller;
 
   final _tabs = [
-    const Center(
-      child: Text('nanti disini page'),
-    ),
+    const HomePage(),
     const Center(
       child: Text('nanti disini page'),
     ),
