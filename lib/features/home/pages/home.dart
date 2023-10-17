@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:me_doc/features/notification/pages/notification.dart';
 
 import '../../../core/theme/color_value.dart';
 import '../widgets/consul_widget.dart';
@@ -70,21 +71,31 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
-          Container(
-              height: 52.h,
-              width: 52.w,
-              decoration: const BoxDecoration(
-                  color: ColorValue.primaryColor,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(12),
-                      bottomLeft: Radius.circular(12))),
-              child: Center(
-                child: SvgPicture.asset(
-                  "assets/icons/notification.svg",
-                  height: 24.h,
-                  width: 24.w,
-                ),
-              ))
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const NotificationPage(),
+                  ));
+            },
+            child: Container(
+                height: 52.h,
+                width: 52.w,
+                decoration:  BoxDecoration(
+                    color: ColorValue.primaryColor,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(12.r),
+                        bottomLeft: Radius.circular(12.r))),
+                child: Center(
+                  child: SvgPicture.asset(
+                    "assets/icons/notification.svg",
+                    height: 24.h,
+                    width: 24.w,
+                  ),
+
+                )),
+          )
         ],
       ),
     );
