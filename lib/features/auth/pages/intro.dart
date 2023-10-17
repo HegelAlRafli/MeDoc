@@ -45,7 +45,7 @@ class IntroPage extends StatelessWidget {
                 'Untuk lebih lanjut, silahkan masuk dengan akun anda. Jika kalian belum memiliki akun Me&Doc,silahkan daftar dan membuat akun.',
                 style: textTheme.bodyText2?.copyWith(color: Colors.white),
               ),
-              SizedBox(height: 48.h),
+              const Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

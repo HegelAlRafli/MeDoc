@@ -6,4 +6,5 @@ class ColorValue {
   static const Color backgroundColor = Color(0XFFF9F9F9);
   static const Color greyColor = Color(0XFFF3F6F6);
   static const Color greyTextColor = Color(0XFF9B9B9B);
+  static const Color secondarygreyTextColor = Color(0XFF565656);
 }
