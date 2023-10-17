@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../features/home/pages/home.dart';
+import '../../../features/profile/pages/profile.dart';
 import '../../theme/color_value.dart';
 
 class BottomNavigation extends StatefulWidget {
@@ -26,9 +27,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     const Center(
       child: Text('nanti disini page'),
     ),
-    const Center(
-      child: Text('nanti disini page'),
-    ),
+    const ProfilePage(),
   ];
 
   final _items = [
@@ -102,7 +101,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white,
         selectedItemColor: ColorValue.primaryColor,
-        unselectedItemColor: Color(0xFFB8EBE6),
+        unselectedItemColor: const  Color(0xFFB8EBE6),
         selectedLabelStyle: textTheme.bodyText2,
         unselectedLabelStyle: textTheme.bodyText2,
         showUnselectedLabels: true,

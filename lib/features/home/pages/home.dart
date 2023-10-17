@@ -18,8 +18,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final widthScreen = MediaQuery.of(context).size.width;
-    final textTheme = Theme.of(context).textTheme;
     return Scaffold(
       backgroundColor: const Color(0xffF9F9F9),
       body: SafeArea(
