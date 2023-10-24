@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:me_doc/features/notification/pages/notification.dart';
+import 'package:me_doc/core/extensions/capitalize.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/theme/color_value.dart';
+import '../../notification/pages/notification.dart';
 import '../widgets/consul_widget.dart';
 import '../widgets/customtitle_widget.dart';
 import '../widgets/expression_widget.dart';
@@ -17,6 +19,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String name = 'User';
+
+  void getToken() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    setState(() {
+      name = pref.getString('token')!.toCapitalized();;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getToken();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +71,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Selamat Pagi, User",
+                "Selamat Pagi, $name",
                 style: textTheme.headline2?.copyWith(
                   fontWeight: FontWeight.w500,
                 ),
