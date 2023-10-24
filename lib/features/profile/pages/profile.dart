@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:me_doc/core/extensions/capitalize.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../auth/pages/intro.dart';
@@ -21,7 +22,7 @@ class _ProfilePageState extends State<ProfilePage> {
   void getToken() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     setState(() {
-      name = pref.getString('token')!;
+      name = pref.getString('token')!.toCapitalized();;
     });
   }
 

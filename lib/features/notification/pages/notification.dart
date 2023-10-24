@@ -52,61 +52,101 @@ class _NotificationPageState extends State<NotificationPage> {
                 shrinkWrap: true,
                 itemCount: 4,
                 itemBuilder: (context, index) {
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                  Text('Hari ini', style: textTheme.bodyText1?.copyWith(fontSize: 14.sp, fontWeight: FontWeight.w400),),
-                  SizedBox(height: 25.h,),
-                    ListView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: 3,
-                      itemBuilder: (context, index) {
-                      return Column(
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.start,
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Hari ini',
+                        style: textTheme.bodyText1?.copyWith(
+                            fontSize: 14.sp, fontWeight: FontWeight.w400),
+                      ),
+                      SizedBox(
+                        height: 25.h,
+                      ),
+                      ListView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        itemCount: 3,
+                        itemBuilder: (context, index) {
+                          return Column(
                             children: [
-                            Container(width: 40.w,
-                            height: 40.h,decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color(0xff153B50),
-                              ),
-                            child:  Padding(
-                              padding: EdgeInsets.all(8.0.h),
-                              child: SvgPicture.asset('assets/icons/info.svg',),
-                            )
-                            ),
-                            SizedBox(width: 16.w,),
-                            SizedBox(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                SizedBox(
-                                  width: screen.width - 30.w - 34.w - 16.w - 30.w - 40.w,
-                                  child: Text('Promo 20% Semua Konseler', style: textTheme.bodyText1?.copyWith(fontSize: 16.sp, fontWeight: FontWeight.w500, color: Colors.black),
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 1,
+                                  Container(
+                                      width: 40.w,
+                                      height: 40.h,
+                                      decoration: const BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Color(0xff153B50),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(8.0.h),
+                                        child: SvgPicture.asset(
+                                          'assets/icons/info.svg',
+                                        ),
+                                      )),
+                                  SizedBox(
+                                    width: 16.w,
                                   ),
-                                ),
-                                SizedBox(
-                                  width: screen.width - 30.w - 34.w - 16.w - 30.w -8.5.w,
-                                  child: Text('hanya berlaku sampai september 2022',
-                                      overflow: TextOverflow.ellipsis,
-                                      maxLines: 1
-                                      ,style: textTheme.bodyText1?.copyWith(fontSize: 12.sp, fontWeight: FontWeight.w400, color: Colors.black),),
-                                ),
-                              ],),
-                            )
-                          ],),
-                          SizedBox(height: 22.h,),
-
-                        ],
-                      );
-                    },)
-                ],);
-              },)
+                                  SizedBox(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          width: screen.width -
+                                              30.w -
+                                              34.w -
+                                              16.w -
+                                              30.w -
+                                              40.w,
+                                          child: Text(
+                                            'Promo 20% Semua Konseler',
+                                            style: textTheme.bodyText1
+                                                ?.copyWith(
+                                                    fontSize: 16.sp,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: Colors.black),
+                                            overflow: TextOverflow.ellipsis,
+                                            maxLines: 1,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: screen.width -
+                                              30.w -
+                                              34.w -
+                                              16.w -
+                                              30.w -
+                                              8.5.w,
+                                          child: Text(
+                                            'hanya berlaku sampai september 2022',
+                                            overflow: TextOverflow.ellipsis,
+                                            maxLines: 1,
+                                            style: textTheme.bodyText1
+                                                ?.copyWith(
+                                                    fontSize: 12.sp,
+                                                    fontWeight: FontWeight.w400,
+                                                    color: Colors.black),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                height: 22.h,
+                              ),
+                            ],
+                          );
+                        },
+                      )
+                    ],
+                  );
+                },
+              )
             ],
           ),
         ),

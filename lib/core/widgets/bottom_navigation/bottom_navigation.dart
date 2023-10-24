@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../features/explore/pages/explore.dart';
 import '../../../features/home/pages/home.dart';
 import '../../../features/profile/pages/profile.dart';
 import '../../theme/color_value.dart';
@@ -18,9 +19,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
 
   final _tabs = [
     const HomePage(),
-    const Center(
-      child: Text('nanti disini page'),
-    ),
+    const ExplorePage(),
     const Center(
       child: Text('nanti disini page'),
     ),
@@ -101,7 +100,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white,
         selectedItemColor: ColorValue.primaryColor,
-        unselectedItemColor: const  Color(0xFFB8EBE6),
+        unselectedItemColor: const Color(0xFFB8EBE6),
         selectedLabelStyle: textTheme.bodyText2,
         unselectedLabelStyle: textTheme.bodyText2,
         showUnselectedLabels: true,
